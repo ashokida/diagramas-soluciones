@@ -3,4 +3,4 @@
 | Archivo | Descripcion |
 | :--- | :--- |
 | ![DiagramaSIEP_Testing](./diagramas/DiagramaSIEP_Testing.svg) | Este diagrama detalla cómo fluyen los datos desde la carga hasta su impacto en la base de datos para las pruebas en el Sistema de Escrutinio Provisorio. |
-| ![DiagramaSTP](./diagramas/diagramastp.md) | Este diagrama representa el ecosistema de **Tarjeta Prepaga Social** y cómo interactúan los diversos datastores y actores con el núcleo del sistema. |
+| ![DiagramaSTP](./diagramas/DiagramaSTP.png) | Este diagrama representa el ecosistema de **Tarjeta Prepaga Social** y cómo interactúan los diversos datastores y actores con el núcleo del sistema. |
