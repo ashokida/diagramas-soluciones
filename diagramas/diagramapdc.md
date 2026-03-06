@@ -1,3 +1,5 @@
+```mermaid
+
 graph TD
     PDC((Sistema Central PDC))
 
