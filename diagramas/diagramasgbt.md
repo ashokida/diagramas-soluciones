@@ -1,5 +1,5 @@
 ## 🗺️ Diagrama de Contexto del Sistema
-Este diagrama representa el ecosistema de la **Gestión de Beneficios por Tarjeta ** y cómo interactúan los diversos datastores y actores con el núcleo del sistema.
+Este diagrama representa el ecosistema de la **Gestión de Beneficios por Tarjeta ** y cómo interactúan los diversos datastores y actores con el núcleo del sistema
 
 ```mermaid
 
