@@ -12,8 +12,8 @@ graph TD
     subgraph Entidades Externas
         SOC -- "Asientos Contables" --> SAP[SAP]
         SAP -- "Maestros Materiales/Cuentas" --> SOC
-        NIS[Conexión NIS] -- "Info Maestra Sucursales" --> SOC
-        SAS[MOSAIC / SAS] -- "Ajustes Contables" --> SOC
+        SSUC[Conexión SSUC] -- "Info Maestra Sucursales" --> SOC
+        PVTA -- "Ajustes Contables" --> SOC
     end
 
     %% Estilo para resaltar el núcleo
