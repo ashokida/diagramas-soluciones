@@ -37,5 +37,5 @@ graph LR
 
     %% Nota / Leyenda (Usando strings con comillas y saltos de línea estándar)
     subgraph L [Referencia de Acrónimos]
-        Leyenda["<b>SIPACON:</b> Sist. Parametría Contable<br/><b>SSUC:</b> Sist. de Sucursales<br/><b>PVTA:</b> Sist. Punto de Venta<br/><b>TESORERIA:</b> Área de Tesorería<br/><b>SAP:</b> Sistema SAP<br/><b>SOC:</b> Sist. Operaciones de Caja<br/><b>GI:</b> Gastos Internos<br/><b>CHEQUES:</b> Gestión de Cheques<br/><b>SIGEMO:</b> Gestión Monetaria<br/><b>GIBA:</b> Giros Bancarios<br/><b>SRT:</b> Recaudación Terceros<br/><b>DM:</b> Datos Maestros<br/><b>PC:</b> Parametría Contable"]
+        Leyenda["<b>SIPACON:</b> Sist. Parametría Contable<br/><b>SSUC:</b> Sist. de Sucursales<br/><b>PVTA:</b> Sist. Punto de Venta<br/><b>TESORERIA:</b> Área de Tesorería<br/><b>SAP:</b> Sist. SAP<br/><b>SOC:</b> Sist. Operaciones de Caja<br/><b>GI:</b> Sist. Gastos Internos<br/><b>CHEQUES:</b> Sist. Gestión de Cheques<br/><b>SIGEMO:</b> Sist. Gestión Monetaria<br/><b>GIBA:</b> Sist. Giros Bancarios<br/><b>SRT:</b> Sist. Recaudación de Terceros<br/><b>DM:</b> Datos Maestros<br/><b>PC:</b> Parametría Contable"]
     end
