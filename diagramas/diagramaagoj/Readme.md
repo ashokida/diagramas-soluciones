@@ -6,7 +6,7 @@ graph TD
     classDef external fill:#e1f5fe,stroke:#01579b,stroke-width:1.5px;
 
     %% Nodo Central
-    SGOJ(("S.G.O.J.<br/>(Administración de Oficios)")):::nucleus
+    SGOJ(("S.G.O.J.<br/>(Sistema de Gestion de Oficios Judiciales)")):::nucleus
 
     %% Entidades Externas
     JUDGADOS["Juzgados (Poder Judicial)"]:::external
