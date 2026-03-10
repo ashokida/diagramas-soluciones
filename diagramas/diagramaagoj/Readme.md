@@ -1,4 +1,4 @@
-´´´mermaid
+´´´´´mermaid
 
 graph TD
     %% Estilo del núcleo central
