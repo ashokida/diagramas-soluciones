@@ -18,3 +18,8 @@ graph TD
 
     %% Estilo para resaltar el núcleo
     style SOC fill:#f9f,stroke:#333,stroke-width:4px
+
+    %% Nota / Leyenda
+    subgraph L [Referencia de Acrónimos]
+        Leyenda["<b>SSUC:</b> Sist. de Sucursales<br/><b>PVTA:</b> Sist. Punto de Venta"]
+    end
