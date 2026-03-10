@@ -1,45 +1,37 @@
 ```mermaid
 
 graph TD
-    %% Estilo del núcleo central
-    classDef nucleus fill:#f9f,stroke:#333,stroke-width:2px,color:black, rx:10, ry:10;
-    
-    %% Definición del Sistema Central
-    AGOJ((Sistema A.G.O.J.<br/>Administración de Oficios Judiciales)):::nucleus
+    %% Definición de Estilos
+    classDef nucleus fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef external fill:#e1f5fe,stroke:#01579b,stroke-width:1.5px;
 
-    %% Definición de Entidades Externas (Cajas)
-    JUDGADOS[Juzgados (Poder Judicial)]:::external
-    SUCURSALES[Sucursales (Puntos de Atención)]:::external
-    MESA[Mesa de Entrada / Archivo]:::external
-    T&T[Sistema T&T (Satélite/Comunicaciones)]:::external
-    MOSAIC[Sistema MOSAIC (Base de Datos)]:::external
+    %% Nodo Central
+    AGOJ(("A.G.O.J.<br/>(Administración de Oficios)")):::nucleus
 
-    %% Interacciones (Flujos de Información)
-    AGOJ --"Envío de Respuestas Impresas"--> JUDGADOS
-    JUDGADOS --"Solicitud de Oficios Judiciales (Originales)"--> AGOJ
+    %% Entidades Externas
+    JUDGADOS["Juzgados (Poder Judicial)"]:::external
+    SUCURSALES["Sucursales (Puntos de Atención)"]:::external
+    MESA["Mesa de Entrada / Archivo"]:::external
+    TT["Sistema T&T (Satélite)"]:::external
+    MOSAIC["Sistema MOSAIC (Base de Datos)"]:::external
 
-    SUCURSALES --"Generación automática de Respuestas"--> AGOJ
-    AGOJ --"Envío de Pases (Pedidos de Información)"--> SUCURSALES
+    %% Flujos de Información
+    JUDGADOS -- "Oficios Judiciales" --> AGOJ
+    AGOJ -- "Respuestas Impresas" --> JUDGADOS
 
-    AGOJ --"Pedidos de Información (vía T&T)"--> T&T
-    T&T --"Recepción automática de Respuestas"--> AGOJ
+    AGOJ -- "Pedidos de información (ASCII)" --> SUCURSALES
+    SUCURSALES -- "Respuestas automáticas" --> AGOJ
 
-    MESA --"Recepción de Oficios Físicos (Carga Manual)"--> AGOJ
-    AGOJ --"Datos de Guía para Archivo (Anual/Trienal)"--> MESA
+    AGOJ -- "Pedidos vía FTP" --> TT
+    TT -- "Recepción de respuestas" --> AGOJ
 
-    MOSAIC --"Carga automática diaria de datos (Archivos ASCII)"--> AGOJ
-    AGOJ --"Cotejo de datos con documentación física"--> MOSAIC
+    MESA -- "Oficios físicos (Carga manual)" --> AGOJ
+    AGOJ -- "Guía para archivo" --> MESA
 
-    %% Subprocesos Internos Clave (Indicados en el flujo)
-    subgraph Procesos Internos de A.G.O.J.
-    I(Ingreso/Gestión de Pases)
-    P(Procesamiento/Carga de Piezas)
-    O(Salida/Gestión de Alertas)
+    MOSAIC -- "Carga diaria (ASCII)" --> AGOJ
+    AGOJ -. "Validación/Cotejo" .-> MOSAIC
+
+    %% Subproceso representativo
+    subgraph Gestion_Interna [Procesamiento Interno]
+        AGOJ
     end
-    
-    I -.-> AGOJ
-    P -.-> AGOJ
-    O -.-> AGOJ
-
-    %% Estilos de las entidades externas
-    classDef external fill:#e1f5fe,stroke:#01579b,stroke-width:1.5px,rx:5,ry:5,color:black;
