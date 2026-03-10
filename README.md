@@ -9,4 +9,4 @@ Este repositorio centraliza la documentación técnica de los diversos proyectos
 | Sistema de Servicio de Clientes| ![EsquemaSC](./diagramas/diagramasercli/diagramasercli.png) | Esquema funcional entre servidores para el Sistema de Servicio de Clientes. |
 | Sistema de Parametria Contable| ![DiagramaSIPACON](./diagramas/diagramasipacon/diagramasipacon.png) | Este diagrama representa el ecosistema de **Sistema de Parametria Contable** y detalla tanto a quien provee la parametria contable como de quien obtiene informacion para generar dicha parametría. |
 | Sistema de Operaciones de Caja| ![DiagramaSOC](./diagramas/diagramasoc/diagramasoc.png) | Este diagrama de contexto representa al Sistema de Operaciones de Caja (SOC) el cual efecuta la gestion operativa y financiera de las operaciones en sucursales. |
-| Sistema de Gestion de Beneficios por Tarjeta| ![DERSGBT](./diagramas/diagramasgbt/DER_SGBT_Preview.png) | (Privado) DER correspondiente a SGBT |
+| Sistema de Gestion de Beneficios por Tarjeta| ![DERSGBT](./diagramas/diagramasgbt/DER_SGBT_Preview.png) | (Privado) DER correspondiente a SGBT - Solicitar via [LinkedIn](https://www.linkedin.com/in/aldoshk/)|
