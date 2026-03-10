@@ -1,7 +1,7 @@
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ffffff', 'edgeLabelBSIPACONkground':'#ffffff', 'tertiaryColor': '#ffffff'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ffffff', 'edgeLabelBackground':'#ffffff', 'tertiaryColor': '#ffffff'}}}%%
 graph LR
-    %% Nodos con nombres protegidos por comillas
+    %% Nodos principales
     SSUC_TXT["SSUC (TXT)"]
     PVTA_TXT["PVTA (TXT)"]
     TESORERIA_TXT["TESORERIA (TXT)"]
@@ -13,7 +13,6 @@ graph LR
     SIGEMO_ORACLE["SIGEMO (ORACLE)"]
     GIBA_ORACLE["GIBA (ORACLE)"]
     SRT_SQL["SRT (SQL)"]
-    
 
     %% Conexiones
     SSUC_TXT -- "DM" --> SOC
@@ -23,7 +22,7 @@ graph LR
     SAP_TXT -- "DM" --> SIPACON
     TESORERIA_TXT -- "DM" --> SIPACON
     SOC -- "DM" --> SIPACON
-    SIPACON -- "PC " --> SOC
+    SIPACON -- "PC" --> SOC
 
     SIPACON -- "DM" --> GI_SQL
     SIPACON -- "PC" --> GI_SQL
@@ -31,23 +30,12 @@ graph LR
     SIPACON -- "PC" --> SIGEMO_ORACLE
     SIPACON -- "PC" --> GIBA_ORACLE
     SIPACON -- "PC" --> SRT_SQL
-    
 
-    %% Estilos básicos
+    %% Estilos
     style SIPACON fill:#f9f,stroke:#333,stroke-width:2px
+    style Leyenda fill:#fffef0,stroke:#d4d4d4,stroke-dasharray: 5 5
 
-    %% Nota / Leyenda  
-    Leyenda["<b>SIPACON:</b> Sistema de Parametría Contable<br/> 
-	         <b>SSUC:</b> Sistema de Sucursales<br/> 
-			 <b>PVTA:</b> Sistema de Punto de Venta<br/> 
-			 <b>TESORERIA:</b> Area de Tesoreria<br/> 
-			 <b>SAP:</b> Sistema SAP<br/> 
-			 <b>SOC:</b> Sistema de Operaciones de Caja<br/> 
-			 <b>GI:</b> Sistema de Gastos Internos<br/> 
-			 <b>CHEQUES:</b> Sistema de Gestion de Cheques<br/> 
-			 <b>SIGEMO:</b> Sistema de Gestion Monetaria<br/> 
-			 <b>GIBA:</b> Sistema de Giros Bancarios<br/> 
-			 <b>SRT:</b> Sistema de Recaudacion para Terceros<br/> 
-			 <b>DM:</b> Datos maestros<br/> 
-			 <b>PC:</b> Parametria Contable<br/>]
-			 
+    %% Nota / Leyenda (Usando strings con comillas y saltos de línea estándar)
+    subgraph L [Referencia de Acrónimos]
+        Leyenda["<b>SIPACON:</b> Sist. Parametría Contable<br/><b>SSUC:</b> Sist. de Sucursales<br/><b>PVTA:</b> Sist. Punto de Venta<br/><b>TESORERIA:</b> Área de Tesorería<br/><b>SAP:</b> Sist. SAP<br/><b>SOC:</b> Sist. Operaciones de Caja<br/><b>GI:</b> Sist. Gastos Internos<br/><b>CHEQUES:</b> Sist. Gestión de Cheques<br/><b>SIGEMO:</b> Sist. Gestión Monetaria<br/><b>GIBA:</b> Sist. Giros Bancarios<br/><b>SRT:</b> Sist. Recaudación de Terceros<br/><b>DM:</b> Datos Maestros<br/><b>PC:</b> Parametría Contable"]
+    end
