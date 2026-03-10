@@ -1,40 +1,41 @@
 ```mermaid
 %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ffffff', 'edgeLabelBackground':'#ffffff', 'tertiaryColor': '#ffffff'}}}%%
 graph LR
-    %% Nodos con nombres protegidos por comillas
-    SAS_TXT["SAS (TXT)"]
-    MOSAIC_TXT["MOSAIC (TXT)"]
+    %% Nodos principales
+    SSUC_TXT["SSUC (TXT)"]
+    PVTA_TXT["PVTA (TXT)"]
     TESORERIA_TXT["TESORERIA (TXT)"]
     SAP_TXT["SAP (TXT)"]
-    PDC_AUTO["PDC_AUTO"]
-    AC(("ASIGNACION CONTABLE (AC)"))
-    GME_SQL["GME (SQL)"]
-    POL_PCT_CHQ_SQL["POL, PCT, CHQ (SQL)"]
-    SIMON_PCT_ORACLE["SIMON PCT (ORACLE)"]
-    ADMITEL_ORACLE["ADMITEL (ORACLE)"]
-    GIROS_TXT_ORACLE["GIROS txt (ORACLE)"]
-    SACCT_SQL["SACCT (SQL)"]
-    IFS_SQL["IFS (SQL)"]
+    SOC["SOC"]
+    SIPACON(("SIST. PARAMETRIA CONTABLE (SIPACON)"))
+    GI_SQL["GI (SQL)"]
+    CHEQUES_SQL["CHEQUES (SQL)"]
+    SIGEMO_ORACLE["SIGEMO (ORACLE)"]
+    GIBA_ORACLE["GIBA (ORACLE)"]
+    SRT_SQL["SRT (SQL)"]
 
     %% Conexiones
-    SAS_TXT -- "MAESTROS (5)" --> PDC_AUTO
-    MOSAIC_TXT -- "MAESTROS (9)" --> PDC_AUTO
-    MOSAIC_TXT -- "MAESTROS (9)" --> AC
-    SAP_TXT -- "MAESTROS (5)" --> PDC_AUTO
-    SAP_TXT -- "MAESTROS (9)" --> AC
-    TESORERIA_TXT -- "MAESTRO" --> AC
+    SSUC_TXT -- "DM" --> SOC
+    PVTA_TXT -- "DM" --> SOC
+    PVTA_TXT -- "DM" --> SIPACON
+    SAP_TXT -- "DM" --> SOC
+    SAP_TXT -- "DM" --> SIPACON
+    TESORERIA_TXT -- "DM" --> SIPACON
+    SOC -- "DM" --> SIPACON
+    SIPACON -- "PC" --> SOC
 
-    PDC_AUTO -- "MAESTROS (2)" --> AC
-    AC -- "CONTABLE (27)" --> PDC_AUTO
+    SIPACON -- "DM" --> GI_SQL
+    SIPACON -- "PC" --> GI_SQL
+    SIPACON -- "PC" --> CHEQUES_SQL
+    SIPACON -- "PC" --> SIGEMO_ORACLE
+    SIPACON -- "PC" --> GIBA_ORACLE
+    SIPACON -- "PC" --> SRT_SQL
 
-    AC -- "MAESTROS (4)" --> GME_SQL
-    AC -- "CONTABLE" --> GME_SQL
-    AC -- "CONTABLE (10)" --> POL_PCT_CHQ_SQL
-    AC -- "CONTABLE (7)" --> SIMON_PCT_ORACLE
-    AC -- "CONTABLE (4)" --> ADMITEL_ORACLE
-    AC -- "CONTABLE (2)" --> GIROS_TXT_ORACLE
-    AC -- "CONTABLE (8)" --> SACCT_SQL
-    AC -- "CONTABLE (2)" --> IFS_SQL
+    %% Estilos
+    style SIPACON fill:#f9f,stroke:#333,stroke-width:2px
+    style Leyenda fill:#fffef0,stroke:#d4d4d4,stroke-dasharray: 5 5
 
-    %% Estilos básicos
-    style AC fill:#f9f,stroke:#333,stroke-width:2px
+    %% Nota / Leyenda (Usando strings con comillas y saltos de línea estándar)
+    subgraph L [Referencia de Acrónimos]
+        Leyenda["<b>SIPACON:</b> Sist. Parametría Contable<br/><b>SSUC:</b> Sist. de Sucursales<br/><b>PVTA:</b> Sist. Punto de Venta<br/><b>TESORERIA:</b> Área de Tesorería<br/><b>SAP:</b> Sistema SAP<br/><b>SOC:</b> Sist. Operaciones de Caja<br/><b>GI:</b> Gastos Internos<br/><b>CHEQUES:</b> Gestión de Cheques<br/><b>SIGEMO:</b> Gestión Monetaria<br/><b>GIBA:</b> Giros Bancarios<br/><b>SRT:</b> Recaudación Terceros<br/><b>DM:</b> Datos Maestros<br/><b>PC:</b> Parametría Contable"]
+    end
