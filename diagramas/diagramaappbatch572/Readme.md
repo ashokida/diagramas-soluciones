@@ -9,7 +9,7 @@ graph TD
     LIQUIDADOR["<b>SECTOR DE LIQUIDACIÓN DE HABERES</b><br/>Administrador y Controlador"]
 
     %% Proceso Principal con Título Ajustado
-    subgraph APP ["Proceso C# APP_BATCH_F572"]
+    subgraph APP ["Proceso APP_BATCH_F572"]
         direction LR
         P1["1. REGISTRO DE EXCEPCIONES<br/>Filtrado de Casos Especiales"]
         P2["2. TRANSFORMACIÓN<br/>Normalización de Códigos AFIP"]
