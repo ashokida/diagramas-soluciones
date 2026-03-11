@@ -8,8 +8,8 @@ graph TD
     DENARIUS["<b>SISTEMA DENARIUS</b><br/>Destino de Deducciones y Retenciones"]
     LIQUIDADOR["<b>SECTOR DE LIQUIDACIÓN DE HABERES</b><br/>Administrador y Controlador"]
 
-    %% Proceso Principal (Contenedor)
-    subgraph APP [APLICACION APP_BACTH_F572 - Proceso en C]
+    %% Proceso Principal con Título Ajustado
+    subgraph APP ["APLICACIÓN APP_BATCH_F572 (Proceso en C)"]
         direction LR
         P1["1. REGISTRO DE EXCEPCIONES<br/>Filtrado de Casos Especiales"]
         P2["2. TRANSFORMACIÓN<br/>Normalización de Códigos AFIP"]
@@ -19,14 +19,13 @@ graph TD
         P1 --> P2 --> P3 --> P4
     end
 
-    %% Flujos de Datos Externos e Internos
+    %% Flujos de Datos
     AFIP -- "Declaraciones Juradas (XML)" --> P1
+    P4 -- "Archivo Final (.txt)" --> SAP_HCM
+    P4 -- "Archivo de Deducciones (.txt)" --> DENARIUS
     
-    P4 -- "Archivo Final Normalizado (.txt)" --> SAP_HCM
-    P4 -- "Archivo con Montos de Deducciones (.txt)" --> DENARIUS
-    
-    P1 -- "Reportes de Control, Excepciones y Logs" --> LIQUIDADOR
-    LIQUIDADOR -- "Tablas de Conversión (.txt)" --> P2
+    P1 -- "Reportes y Logs" --> LIQUIDADOR
+    LIQUIDADOR -- "Tablas de Conversión" --> P2
 
     %% Estilos de Nodos
     style AFIP fill:#fff,stroke:#000,stroke-width:2px
@@ -35,6 +34,10 @@ graph TD
     style LIQUIDADOR fill:#fff,stroke:#000,stroke-width:2px
     style APP fill:#f9f9f9,stroke:#333,stroke-dasharray: 5 5
     
+    style P1 fill:#fff,stroke:#000
+    style P2 fill:#fff,stroke:#000
+    style P3 fill:#fff,stroke:#000
+    style P4 fill:#fff,stroke:#000
     style P1 fill:#fff,stroke:#000
     style P2 fill:#fff,stroke:#000
     style P3 fill:#fff,stroke:#000
