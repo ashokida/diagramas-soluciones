@@ -1,6 +1,8 @@
 ```mermaid
 
-%%{init: {'theme': 'neutral', 'themeVariables': { 'primaryColor': '#ffffff', 'edgeLabelBackground':'#ffffff'}}}%%
+%% Configuración de Estilo Global para alto contraste
+classDef default fill:#ffffff,stroke:#000000,stroke-width:2px,color:#000000,font-weight:bold;
+
 graph LR
     %% Definición de Nodos con fondo blanco
     T_AND_T("Track&Trace")
