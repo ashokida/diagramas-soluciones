@@ -9,7 +9,7 @@ graph TD
     LIQUIDADOR["<b>SECTOR DE LIQUIDACIÓN DE HABERES</b><br/>Administrador y Controlador"]
 
     %% Proceso Principal con Título Ajustado
-    subgraph APP ["Proceso C APP_BATCH_F572"]
+    subgraph APP ["Proceso C# APP_BATCH_F572"]
         direction LR
         P1["1. REGISTRO DE EXCEPCIONES<br/>Filtrado de Casos Especiales"]
         P2["2. TRANSFORMACIÓN<br/>Normalización de Códigos AFIP"]
@@ -33,12 +33,16 @@ graph TD
     style DENARIUS fill:#fff,stroke:#000,stroke-width:2px
     style LIQUIDADOR fill:#fff,stroke:#000,stroke-width:2px
     style APP fill:#f9f9f9,stroke:#333,stroke-dasharray: 5 5
+    style Leyenda fill:#fffef0,stroke:#d4d4d4,stroke-dasharray: 2 2
     
     style P1 fill:#fff,stroke:#000
     style P2 fill:#fff,stroke:#000
     style P3 fill:#fff,stroke:#000
     style P4 fill:#fff,stroke:#000
-    style P1 fill:#fff,stroke:#000
-    style P2 fill:#fff,stroke:#000
+
+    %% Nota / Leyenda Detallada
+    subgraph L [Referencia de Términos]
+        Leyenda["<b>SAP HCM:</b> ERP para administración de personal<br/><b>DENARIUS:</b> Gestión RRHH y liquidación de sueldos<br/><b>XML:</b> Formato de declaración jurada (Extensible Markup Language)<br/><b>APP_BATCH_F572:</b> Proceso en C#.NET ejecutado a demanda"]
+    end
     style P3 fill:#fff,stroke:#000
     style P4 fill:#fff,stroke:#000
