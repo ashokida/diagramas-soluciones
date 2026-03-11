@@ -1,3 +1,5 @@
+```mermaid
+
 %%{init: {'theme': 'neutral', 'themeVariables': { 'primaryColor': '#ffffff', 'edgeLabelBackground':'#ffffff'}}}%%
 graph TD
     %% Entidades Externas
