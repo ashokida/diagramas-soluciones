@@ -15,12 +15,13 @@ graph LR
     %% Conexiones (Bordes y flechas en negro por defecto en tema neutral)
     R_Y_S -.-> SN
     BD_COMER -.-> JBOSS
-    JBOSS -.-> BD_COMER
-    SN -.->|SOAP| DRUPAL
-    DRUPAL -.->|REST| PCEL
+    JBOSS --> BD_COMER
+    SN -.-> JBOSS
     JBOSS -.->|OK| SN
     SN -.->|REST| PCEL
-
+    JBOSS -.->|SOAP| DRUPAL
+    DRUPAL -.->|REST| PCEL
+  
     %% Nota / Leyenda
     subgraph L [Referencia de Acrónimos]
         Leyenda["<b>PCEL:</b> Plataforma de Comercio Electrónico<br/><b>BD_COMER:</b> Base de datos MSSQL<br/><b>SN:</b> Servicio de Notificaciones"]
