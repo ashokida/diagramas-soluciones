@@ -15,9 +15,9 @@ graph LR
     %% Conexiones (Bordes y flechas en negro por defecto en tema neutral)
     R_Y_S -.-> SN
     BD_COMER -.-> JBOSS
+    JBOSS -.-> BD_COMER
     SN -.->|SOAP| DRUPAL
     DRUPAL -.->|REST| PCEL
-    JBOSS -.-> BD_COMER
     JBOSS -.->|OK| SN
     SN -.->|REST| PCEL
 
