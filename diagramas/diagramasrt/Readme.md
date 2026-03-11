@@ -1,4 +1,6 @@
 
+```mermaid
+
 graph TD
     %% Estilos de Nodos
     classDef central fill:#99cc00,stroke:#333,stroke-width:2px,color:black;
