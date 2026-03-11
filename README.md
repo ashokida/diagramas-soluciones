@@ -4,7 +4,7 @@ Este repositorio centraliza la documentación técnica de los diversos proyectos
 
 | Archivo | Descripcion |
 | :--- | :--- |
-| ![DiagramaSGBT](./diagramas/diagramasgbt/diagramasgbt.png) | **Sistema de Gestion de Beneficios por Tarjeta** <br> Este diagrama representa el ecosistema de la Gestión de Beneficios por Tarjeta y cómo interactúan los diversos datastores y actores con el núcleo del sistema. |
+| ![DiagramaSGBT](./diagramas/diagramasgbt/diagramasgbt.png) | ## Sistema de Gestion de Beneficios por Tarjeta <br> Este diagrama representa el ecosistema de la Gestión de Beneficios por Tarjeta y cómo interactúan los diversos datastores y actores con el núcleo del sistema. |
 | ![DiagramaPOREP_Testing](./diagramas/diagramaporep/diagramaporep.png) | Portal de Resultados Electorales Provisorio<br> Este diagrama detalla cómo fluyen los datos desde la carga hasta su impacto en la base de datos para las pruebas del Portal de Resultados Electorales Provisorio. |
 | ![EsquemaSC](./diagramas/diagramasercli/diagramasercli.png) | Sistema de Servicio de Clientes<br> Esquema funcional entre servidores para el Sistema de Servicio de Clientes. |
 | ![DiagramaSIPACON](./diagramas/diagramasipacon/diagramasipacon.png) | Sistema de Parametria Contable<br> Este diagrama representa el ecosistema de **Sistema de Parametria Contable** y detalla tanto a quien provee la parametria contable como de quien obtiene informacion para generar dicha parametría. |
