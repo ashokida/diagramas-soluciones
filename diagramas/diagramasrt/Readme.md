@@ -10,15 +10,15 @@ graph TD
 
     %% --- NODOS ---
     
-    CORE(("CORE-COLLECTIONS<br/>(Sistema Central)")):::central
+    SRT(("SRT-SISTEMA DE RECAUDACION DE TERCEROS<br/>(Sistema Central)")):::central
 
     %% Sistemas
-    MOSAIC[("MOSAIC<br/>(Base de Datos)")]
+    PVTA[("PVTA<br/>(Base de Datos)")]
     SWITCH{{"SWITCH<br/>(Intercambio)"}}
-    AC["AC<br/>(Contabilidad)"]
-    SAS["SAS<br/>(Estructura)"]
+    SIPACON["AC<br/>(Contabilidad)"]
+    SSUC["SSUC<br/>(Estructura)"]
     SAP["SAP<br/>(ERP)"]
-    BI["Business Intelligence"]
+ 
     
     %% Actores
     PAGADOR(("PAGADOR"))
@@ -40,7 +40,7 @@ graph TD
     PAGADOR -->|"$$, Cupón"| COBRADOR_PC
     PAGADOR -->|"$$"| COBRADOR_SIN_PC
     
-    CAJERO_RSC -->|"Datos Cupón"| MOSAIC
+    CAJERO_RSC -->|"Datos Cupón"| PVTA
     CAJERO_RSC -->|"Cupón Físico"| COBRADORA
     
     COBRADOR_SIN_PC -->|"Cupón y Planilla"| COBRADORA
@@ -50,34 +50,29 @@ graph TD
     SUC_PC -->|"Datos Cupón"| SWITCH
     SWITCH -->|"Novedades"| SUC_PC
 
-    %% Relaciones con el CORE
-    CORE -->|"Planilla Cobranza"| SUC_PC
-    CORE -->|"Maestro Clientes"| MOSAIC
-    MOSAIC -->|"Planilla Cobranza"| COBRADOR_PC
-    MOSAIC -->|"Datos Cupón"| SWITCH
+    %% Relaciones con el SRT
+    SRT -->|"Planilla Cobranza"| SUC_PC
+    SRT -->|"Maestro Clientes"| PVTA
+    PVTA -->|"Planilla Cobranza"| COBRADOR_PC
+    PVTA -->|"Datos Cupón"| SWITCH
     
-    SWITCH -->|"Cupones del Día"| CORE
-    SWITCH -->|"Novedades"| MOSAIC
+    SWITCH -->|"Cupones del Día"| SRT
+    SWITCH -->|"Novedades"| PVTA
     
-    AC -->|"Parámetros"| CORE
-    SAS -->|"Jerarquía"| CORE
+    SIPACON -->|"Parámetros"| SRT
+    SSUC -->|"Jerarquía"| SRT
     
-    DEP_PROV -->|"Datos Cupón"| CORE
-    CORE -->|"Planilla Recaudación"| DEP_PROV
+    DEP_PROV -->|"Datos Cupón"| SRT
+    SRT -->|"Planilla Recaudación"| DEP_PROV
 
     %% Salidas y Liquidación
-    CORE -->|"Asientos (GL, SD)"| SAP
+    SRT -->|"Asientos Contables"| SAP
     SAP -->|"Factura"| TESORERIA
     
     TESORERIA -->|"$$ Comisión"| CLIENTE
     CLIENTE -->|"$$ Recaudación"| TESORERIA
     
-    CORE -->|"Planilla Liquidación"| LIQUIDADORA
+    SRT -->|"Planilla Liquidación"| LIQUIDADORA
     DEP_PROV -->|"Planilla y Cupones"| LIQUIDADORA
     LIQUIDADORA -->|"Rendición"| DEP_PROV
     LIQUIDADORA -->|"Planilla y Cupones"| CLIENTE
-    
-    CORE -- "Planilla liquidación" --> LIQUIDADORA
-    DEP_PROV -- "Planilla rec. y cupones" --> LIQUIDADORA
-    LIQUIDADORA -- "Rendición recaudación" --> DEP_PROV
-    LIQUIDADORA -- "Planilla liq., cupones" --> CLIENTE
