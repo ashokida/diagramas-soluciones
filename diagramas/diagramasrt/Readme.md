@@ -76,3 +76,9 @@ graph TD
     DEP_PROV -->|"Planilla y Cupones"| LIQUIDADORA
     LIQUIDADORA -->|"Rendición"| DEP_PROV
     LIQUIDADORA -->|"Planilla y Cupones"| CLIENTE
+
+
+
+    %% Nota / Leyenda (Usando strings con comillas y saltos de línea estándar)
+    subgraph L [Referencia de Acrónimos]
+        Leyenda["<b>SIPACON:</b> Sist. Parametría Contable<br/><b>SSUC:</b> Sist. de Sucursales<br/><b>PVTA:</b> Sist. Punto de Venta<br/><b>TESORERIA:</b> Área de Tesorería<br/><b>SAP:</b> Sist. SAP<br/><b>SRT:</b> Sist. Recaudación de Terceros"]
