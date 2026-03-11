@@ -15,7 +15,7 @@ graph TD
     %% Sistemas
     PVTA[("PVTA<br/>(Base de Datos)")]
     SWITCH{{"SWITCH<br/>(Intercambio)"}}
-    SIPACON["AC<br/>(Contabilidad)"]
+    SIPACON["SIPACON<br/>(Parametria Contable)"]
     SSUC["SSUC<br/>(Estructura)"]
     SAP["SAP<br/>(ERP)"]
  
