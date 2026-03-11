@@ -18,9 +18,9 @@ graph LR
     JBOSS --> BD_COMER
     SN -.-> JBOSS
     JBOSS -.->|OK| SN
-    SN -.->|REST| PCEL
-    JBOSS -.->|SOAP| DRUPAL
-    DRUPAL -.->|REST| PCEL
+    SN <-.->|REST| PCEL
+    JBOSS <-.->|SOAP| DRUPAL
+    DRUPAL <-.->|REST| PCEL
   
     %% Nota / Leyenda
     subgraph L [Referencia de Acrónimos]
