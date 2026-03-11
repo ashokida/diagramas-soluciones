@@ -8,7 +8,7 @@ graph LR
     R_Y_S("Rastreo&Seguimiento (R&S)")
     PCEL("PCEL - WS REST")
     BD_COMER["<<datastore>><br/>BD_COMER (SqlServer)"]
-    SN["PI - Servicio de Notificacion"]
+    SN["SN - Servicio de Notificaciones"]
     JBOSS["JBoss"]
     DRUPAL["Drupal"]
 
