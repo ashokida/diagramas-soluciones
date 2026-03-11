@@ -3,7 +3,7 @@
 %%{init: {'theme': 'neutral', 'themeVariables': { 'primaryColor': '#ffffff', 'edgeLabelBackground':'#ffffff'}}}%%
 graph TD
     %% Entidades Externas
-    AFIP["<b>AFIP (SiRADIG)</b><br/>Proveedor de Datos de Origen"]
+    AFIP["<b>ARCA (SiRADIG)</b><br/>Proveedor de Datos de Origen"]
     SAP_HCM["<b>SISTEMA SAP HCM</b><br/>Destino de Cargas Familiares"]
     DENARIUS["<b>SISTEMA DENARIUS</b><br/>Destino de Deducciones y Retenciones"]
     LIQUIDADOR["<b>SECTOR DE LIQUIDACIÓN DE HABERES</b><br/>Administrador y Controlador"]
