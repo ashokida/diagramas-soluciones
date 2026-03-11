@@ -21,18 +21,3 @@ graph LR
     JBOSS -.->|OK| PI_PN
     PI_PN -.->|REST| MELI
 
-    %% Estilos de Nodos (Fondo blanco, bordes negros, letras negras)
-    style T_AND_T fill:#fff,stroke:#000,color:#000
-    style MELI fill:#fff,stroke:#000,color:#000
-    style DS_ECOM fill:#fff,stroke:#000,color:#000
-    style PI_PN fill:#fff,stroke:#000,color:#000
-    style JBOSS fill:#fff,stroke:#000,color:#000
-    style DRUPAL fill:#fff,stroke:#000,color:#000
-
-    %% Estilos de Líneas
-    %% Todas las líneas normales en negro (stroke:#000)
-    linkStyle 0,1,2,3,4,5 stroke:#000,stroke-width:2px,stroke-dasharray: 5 5
-    
-    %% Mantenemos la línea de MELI destacada pero en negro sólido o más gruesa 
-    %% (Si la preferís negra, cambiá stroke:#F44336 por #000)
-    linkStyle 6 stroke:#000,stroke-width:4px,stroke-dasharray: 5 5
