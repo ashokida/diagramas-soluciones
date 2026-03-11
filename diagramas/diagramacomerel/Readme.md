@@ -1,9 +1,9 @@
 ```mermaid
 
-%% Configuración de Estilo Global para alto contraste
-classDef default fill:#ffffff,stroke:#000000,stroke-width:2px,color:#000000,font-weight:bold;
-
 graph LR
+    %% Configuración de Estilo Global para alto contraste
+    classDef default fill:#ffffff,stroke:#000000,stroke-width:2px,color:#000000,font-weight:bold;
+
     %% Definición de Nodos con fondo blanco
     T_AND_T("Track&Trace")
     MELI("MELI - WS REST")
