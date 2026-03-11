@@ -21,3 +21,7 @@ graph LR
     JBOSS -.->|OK| PI_PN
     PI_PN -.->|REST| MELI
 
+    %% Nota / Leyenda
+    subgraph L [Referencia de Acrónimos]
+        Leyenda["<b>PCEL:</b> Plataforma de Comercio Electrónico<br/><b>BD_COMER:</b> Base de datos MSSQL<br/><b>SN:</b> Servicio de Notificaciones"]
+    end
